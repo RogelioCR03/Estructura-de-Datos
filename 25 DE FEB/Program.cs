@@ -1,59 +1,81 @@
-﻿using System;
+using System;
 
-namespace Practica_1
+namespace Proyecto_Calculo_Vectorial
 {
+
     class Program
     {
+        public static int i;
+        public static int j;
+        public static int k;
+        public static int operacion;
+        public static double MAGNITUD;
         static void Main(string[] args)
         {
             
-            string nombre;
-            int año;
-            int mes;
-            int dia;
+            Console.WriteLine("Hello World!");
+            SumaDeVectores();
+        }
+        public static void SumaDeVectores() 
+        {
+            Console.WriteLine("Vector A: ");
+            Console.WriteLine("Valor de i: ");
+            i = int.Parse(Console.ReadLine());
+            Console.WriteLine("Valor de j: ");
+            j = int.Parse(Console.ReadLine());
+            Console.WriteLine("Valor de k: ");
+            k = int.Parse(Console.ReadLine());
 
-            Console.Title = "Obtener la edad";
+            Console.WriteLine("\nVector B: ");
+            Console.WriteLine("Valor de i: ");
+            int I = int.Parse(Console.ReadLine());
+            Console.WriteLine("Valor de j: ");
+            int J = int.Parse(Console.ReadLine());
+            Console.WriteLine("Valor de k: ");
+            int K = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Ingresa tu nombre completo: ");
-            nombre = Console.ReadLine();
-            Console.WriteLine("Fecha de nacimiento: ");
-            Console.WriteLine("Dia: ");
-            dia = Int32.Parse(Console.ReadLine());
-            Console.WriteLine("Mes: ");
-            mes = Int32.Parse(Console.ReadLine());
-            Console.WriteLine("Año: ");
-            año = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("                   |{0}|", I+i);
+            Console.WriteLine("Vector Resultante: |{0}|", J+j);
+            Console.WriteLine("                   |{0}|", K+k);
+        }
+        public static void PorUnEscalar() 
+        {
+            Console.WriteLine("Valor de i: ");
+            i = int.Parse(Console.ReadLine());
+            Console.WriteLine("Valor de j: ");
+            j = int.Parse(Console.ReadLine());
+            Console.WriteLine("Valor de k: ");
+            k = int.Parse(Console.ReadLine());
 
-            Console.Clear();
+            Console.WriteLine("Valor del escalar: ");
+            int escalar = int.Parse(Console.ReadLine());
 
-            if (mes <= 02)
-            {
-                Console.WriteLine(nombre + " tu edad es de: " + (2021 - año));
-            }
+            int I = i * escalar;
+            int J = j * escalar;
+            int K = k * escalar;
 
-            if (mes > 2)
-            {
-                Console.WriteLine(nombre + " tu edad es de: " + (2020 - año));
-            }
+            Console.WriteLine("                   |{0}|", I);
+            Console.WriteLine("Vector Resultante: |{0}|", J);
+            Console.WriteLine("                   |{0}|", K);
 
-            /*
-            string nombre;
-            int dia, mes, año;
+        }
+        public static void Magnitud(ref int operacion) 
+        {
+            Console.WriteLine("Valor de i: ");
+            i = int.Parse(Console.ReadLine());
+            Console.WriteLine("Valor de j: ");
+            j = int.Parse(Console.ReadLine());
+            Console.WriteLine("Valor de k: ");
+            k = int.Parse(Console.ReadLine());
+            int I = i * i;
+            int J = j * j;
+            int K = k * k;
 
-            Console.WriteLine("Ingresa tu nombre: ");
-            nombre = Console.ReadLine();
-            Console.WriteLine("Dia de nacimiento: ");
-            dia = int.Parse(Console.ReadLine());
-            Console.WriteLine("Mes de nacimiento: ");
-            mes = int.Parse(Console.ReadLine());
-            Console.WriteLine("Año de nacimiento: ");
-            año = int.Parse(Console.ReadLine());
+            operacion = I + J + K;
+            MAGNITUD = Math.Sqrt(operacion);
+            Console.WriteLine("                      ____");
+            Console.WriteLine("Magnitud del vector: √{0} ", operacion);
 
-            DateTime nacimiento = new DateTime(año, mes, dia);
-            DateTime actual = new DateTime(2021, 02, 25);
-
-            Console.WriteLine(actual - nacimiento);
-            */
         }
     }
 }
